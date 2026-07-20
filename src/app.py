@@ -66,6 +66,19 @@ def signup_for_activity(activity_name: str, email: str):
     if email in activity["participants"]:
         raise HTTPException(status_code=400, detail="Student is already signed up for this activity")
 
+#Add 2 more sports related activities, 2 more artistic activities, and 2 more intellectual activities.
+    if activity_name == "Basketball Team":
+        activity["description"] = "Join the school's basketball team and compete in inter-school tournaments"
+        activity["schedule"] = "Mondays, Wednesdays, Fridays, 4:00 PM - 6:00 PM"
+        activity["max_participants"] = 15
+        activity["participants"] = ["john@mergington.edu", "olivia@mergington.edu"]
+
+    if activity_name == "Soccer Team":
+        activity["description"] = "Join the school's soccer team and compete in inter-school tournaments"
+        activity["schedule"] = "Tuesdays, Thursdays, 4:00 PM - 6:00 PM"
+        activity["max_participants"] = 20
+        activity["participants"] = ["john@mergington.edu", "olivia@mergington.edu"]
+    
     # Add student
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
