@@ -122,6 +122,23 @@ section h3 {
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.participant-remove {
+  border: none;
+  background: transparent;
+  color: #c62828;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.participant-remove:hover {
+  color: #8e0000;
 }
 
 .participants-empty {
